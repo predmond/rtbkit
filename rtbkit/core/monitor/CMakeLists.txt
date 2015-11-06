@@ -1,0 +1,8 @@
+add_library(monitor SHARED monitor_client.cc monitor_provider.cc)
+target_link_libraries(monitor rtb services)
+
+add_library(monitor_service SHARED monitor_endpoint.cc)
+target_link_libraries(monitor_service rtb services)
+
+add_executable(monitor_service_runner monitor_service_runner.cc)
+target_link_libraries(monitor_service_runner monitor_service boost_program_options)

@@ -1,0 +1,5 @@
+add_subdirectory("monitor")
+#add_subdirectory("banker")
+#add_subdirectory("agent_configuration")
+#add_subdirectory("post_auction")
+#add_subdirectory("router")
