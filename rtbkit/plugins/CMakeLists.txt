@@ -1,0 +1,8 @@
+add_subdirectory(adserver)
+add_subdirectory(analytics)
+add_subdirectory(augmentor)
+add_subdirectory(bid_request)
+add_subdirectory(bidder_interface)
+add_subdirectory(bidding_agent)
+add_subdirectory(data_logger)
+add_subdirectory(exchange)

@@ -1,0 +1,8 @@
+add_library(agents_bidder SHARED agents_bidder_interface.cc)
+target_link_libraries(agents_bidder rtb_router)
+
+add_library(http_bidder SHARED http_bidder_interface.cc)
+target_link_libraries(http_bidder rtb_router openrtb_bid_request)
+
+add_library(multi_bidder SHARED multi_bidder_interface.cc)
+target_link_libraries(multi_bidder agent_configuration)
