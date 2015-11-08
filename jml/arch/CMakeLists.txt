@@ -16,7 +16,7 @@ add_library(arch SHARED
 	info.cc
 	rtti_utils.cc
 	rt.cc)
-target_link_libraries(arch ACE dl boost_system)
+target_link_libraries(arch ACE dl boost_system pthread)
 
 # CMAKE TODO
 #ifneq ($(BOOST_VERSION),42)

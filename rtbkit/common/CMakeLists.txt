@@ -24,3 +24,5 @@ target_link_libraries(rtb
 
 add_library(filter_registry SHARED filter.cc)
 target_link_libraries(filter_registry arch utils rtb)
+
+add_subdirectory(testing)
