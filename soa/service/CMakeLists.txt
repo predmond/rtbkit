@@ -70,7 +70,7 @@ target_link_libraries(cloud
 
 add_library(redis SHARED redis.cc)
 target_link_libraries(redis hiredis utils types boost_thread)
-#
+
 #$(eval $(call program,s3_transfer_cmd,cloud boost_program_options boost_filesystem utils))
 #$(eval $(call program,s3tee,cloud boost_program_options utils))
 #$(eval $(call program,s3cp,cloud boost_program_options utils))
@@ -78,11 +78,12 @@ target_link_libraries(redis hiredis utils types boost_thread)
 #$(eval $(call program,syslog_trace,services))
 #$(eval $(call program,s3cat,cloud boost_program_options utils))
 #$(eval $(call program,sns_send,cloud boost_program_options utils))
-#
+
 #SERVICEDUMP_LINK = services boost_program_options
-#
+
 #$(eval $(call program,service_dump,$(SERVICEDUMP_LINK)))
-#
-#
+
+
 #$(eval $(call include_sub_make,service_js,js,service_js.mk))
 #$(eval $(call include_sub_make,service_testing,testing,service_testing.mk))
+add_subdirectory(testing)

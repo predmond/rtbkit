@@ -19,7 +19,7 @@ add_library(rtb SHARED
 	analytics_publisher.cc)
 target_link_libraries(rtb
 	ACE arch utils jsoncpp boost_thread
-	#endpoint
+	services
 	boost_regex zmq opstats bid_request)
 
 add_library(filter_registry SHARED filter.cc)

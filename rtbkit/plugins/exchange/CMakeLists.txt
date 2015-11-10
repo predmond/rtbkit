@@ -1,13 +1,19 @@
-add_library(exchange SHARED
-	http_exchange_connector.cc
-	http_auction_handler.cc
-	)
-target_link_libraries(exchange
-	zeromq boost_thread utils services rtb bid_request
-	)
+add_rtbkit_library(exchange
+	"http_exchange_connector.cc http_auction_handler.cc"
+	"zeromq boost_thread utils services rtb bid_request")
+#add_library(exchange SHARED
+#	http_exchange_connector.cc
+#	http_auction_handler.cc
+#	)
+#target_link_libraries(exchange
+#	zeromq boost_thread utils services rtb bid_request
+#	)
 
-add_library(openrtb_exchange SHARED openrtb_exchange_connector)
-target_link_libraries(openrtb_exchange exchange bid_test_utils openrtb_bid_request)
+add_rtbkit_library(openrtb_exchange
+	"openrtb_exchange_connector.cc"
+	"exchange bid_test_utils openrtb_bid_request")
+#add_library(openrtb_exchange SHARED openrtb_exchange_connector)
+#target_link_libraries(openrtb_exchange exchange bid_test_utils openrtb_bid_request)
 
 add_library(rubicon_exchange SHARED rubicon_exchange_connector)
 target_link_libraries(rubicon_exchange openrtb_exchange)
@@ -33,8 +39,8 @@ target_link_libraries(gumgum_exchange exchange bid_test_utils openrtb_bid_reques
 add_library(fbx_exchange SHARED fbx_exchange_connector)
 target_link_libraries(fbx_exchange exchange bid_test_utils fbx_bid_request)
 
-add_library(adx_exchange SHARED realtime-bidding.proto adx_exchange_connector)
-target_link_libraries(adx_exchange exchange protobuf)
+#add_library(adx_exchange SHARED realtime-bidding.proto adx_exchange_connector)
+#target_link_libraries(adx_exchange exchange protobuf)
 
 add_library(rtbkit_exchange SHARED rtbkit_exchange_connector)
 target_link_libraries(rtbkit_exchange openrtb_exchange)

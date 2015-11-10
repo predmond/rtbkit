@@ -1,0 +1,1 @@
+add_boost_test(standard_adserver_connector_test standard_adserver boost_program_options)

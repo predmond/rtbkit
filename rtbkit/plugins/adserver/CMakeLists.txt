@@ -23,4 +23,4 @@ target_link_libraries(adserver_runner
 	adserver_connector boost_program_options services
 	)
 
-#$(eval $(call include_sub_make,adserver_testing,testing,adserver_testing.mk))
+add_subdirectory(testing)
